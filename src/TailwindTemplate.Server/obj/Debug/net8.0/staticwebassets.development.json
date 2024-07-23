@@ -1,0 +1,1 @@
+{"ContentRoots":["D:\\vs2022_projects\\TailwindTemplate\\src\\TailwindTemplate.Server\\wwwroot\\"],"Root":{"Children":{"api":{"Children":{"specification.json":{"Children":null,"Asset":{"ContentRootIndex":0,"SubPath":"api/specification.json"},"Patterns":null}},"Asset":null,"Patterns":null}},"Asset":null,"Patterns":[{"ContentRootIndex":0,"Pattern":"**","Depth":0}]}}

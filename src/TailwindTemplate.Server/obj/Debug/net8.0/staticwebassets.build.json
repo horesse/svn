@@ -1,0 +1,51 @@
+{
+  "Version": 1,
+  "Hash": "kywmqbJpmPj7UiQ7OIbnq7280JkFne4853mUVjBHn4w=",
+  "Source": "TailwindTemplate.Server",
+  "BasePath": "_content/TailwindTemplate.Server",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [
+    {
+      "Identity": "D:\\vs2022_projects\\TailwindTemplate\\src\\tailwindtemplate.client\\tailwindtemplate.client.esproj",
+      "Version": 2,
+      "Source": "tailwindtemplate.client",
+      "GetPublishAssetsTargets": "GetCurrentProjectPublishStaticWebAssetItems",
+      "AdditionalPublishProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalPublishPropertiesToRemove": "WebPublishProfileFile;TargetFramework;RuntimeIdentifier;SelfContained",
+      "GetBuildAssetsTargets": "GetCurrentProjectBuildStaticWebAssetItems",
+      "AdditionalBuildProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalBuildPropertiesToRemove": "WebPublishProfileFile;TargetFramework;RuntimeIdentifier;SelfContained"
+    }
+  ],
+  "DiscoveryPatterns": [
+    {
+      "Name": "TailwindTemplate.Server\\wwwroot",
+      "Source": "TailwindTemplate.Server",
+      "ContentRoot": "D:\\vs2022_projects\\TailwindTemplate\\src\\TailwindTemplate.Server\\wwwroot\\",
+      "BasePath": "_content/TailwindTemplate.Server",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "D:\\vs2022_projects\\TailwindTemplate\\src\\TailwindTemplate.Server\\wwwroot\\api\\specification.json",
+      "SourceId": "TailwindTemplate.Server",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\vs2022_projects\\TailwindTemplate\\src\\TailwindTemplate.Server\\wwwroot\\",
+      "BasePath": "_content/TailwindTemplate.Server",
+      "RelativePath": "api/specification.json",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\api\\specification.json"
+    }
+  ]
+}

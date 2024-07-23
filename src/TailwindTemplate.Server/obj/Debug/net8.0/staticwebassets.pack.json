@@ -1,0 +1,25 @@
+{
+  "Files": [
+    {
+      "Id": "D:\\vs2022_projects\\TailwindTemplate\\src\\TailwindTemplate.Server\\wwwroot\\api\\specification.json",
+      "PackagePath": "staticwebassets\\api\\specification.json"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.TailwindTemplate.Server.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.TailwindTemplate.Server.props",
+      "PackagePath": "build\\TailwindTemplate.Server.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.TailwindTemplate.Server.props",
+      "PackagePath": "buildMultiTargeting\\TailwindTemplate.Server.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.TailwindTemplate.Server.props",
+      "PackagePath": "buildTransitive\\TailwindTemplate.Server.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

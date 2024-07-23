@@ -1,0 +1,16 @@
+D:\vs2022_projects\TailwindTemplate\src\Application\obj\Debug\net8.0\Application.csproj.AssemblyReference.cache
+D:\vs2022_projects\TailwindTemplate\src\Application\obj\Debug\net8.0\Application.GeneratedMSBuildEditorConfig.editorconfig
+D:\vs2022_projects\TailwindTemplate\src\Application\obj\Debug\net8.0\Application.AssemblyInfoInputs.cache
+D:\vs2022_projects\TailwindTemplate\src\Application\obj\Debug\net8.0\Application.AssemblyInfo.cs
+D:\vs2022_projects\TailwindTemplate\src\Application\obj\Debug\net8.0\Application.csproj.CoreCompileInputs.cache
+D:\vs2022_projects\TailwindTemplate\src\Application\bin\Debug\net8.0\Application.deps.json
+D:\vs2022_projects\TailwindTemplate\src\Application\bin\Debug\net8.0\Application.dll
+D:\vs2022_projects\TailwindTemplate\src\Application\bin\Debug\net8.0\Application.pdb
+D:\vs2022_projects\TailwindTemplate\src\Application\bin\Debug\net8.0\Domain.dll
+D:\vs2022_projects\TailwindTemplate\src\Application\bin\Debug\net8.0\Domain.pdb
+D:\vs2022_projects\TailwindTemplate\src\Application\obj\Debug\net8.0\Applicat.44B5EDA2.Up2Date
+D:\vs2022_projects\TailwindTemplate\src\Application\obj\Debug\net8.0\Application.dll
+D:\vs2022_projects\TailwindTemplate\src\Application\obj\Debug\net8.0\refint\Application.dll
+D:\vs2022_projects\TailwindTemplate\src\Application\obj\Debug\net8.0\Application.pdb
+D:\vs2022_projects\TailwindTemplate\src\Application\obj\Debug\net8.0\ref\Application.dll
+D:\vs2022_projects\TailwindTemplate\src\Application\bin\Debug\net8.0\SharpSvn.dll

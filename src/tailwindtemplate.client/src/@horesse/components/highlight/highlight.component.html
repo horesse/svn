@@ -1,0 +1,8 @@
+<ng-content></ng-content>
+
+<!--@formatter:off-->
+<ng-template let-highlightedCode="highlightedCode" let-lang="lang">
+<div class="horesse-highlight horesse-highlight-code-container w-full h-full">
+<pre [ngClass]="'language-' + lang" class="w-full h-full"><code [ngClass]="'language-' + lang" [innerHTML]="highlightedCode" class="w-full h-full"></code></pre>
+</div>
+</ng-template>

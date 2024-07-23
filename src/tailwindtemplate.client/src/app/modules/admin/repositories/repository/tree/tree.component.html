@@ -1,0 +1,47 @@
+<div class="mx-auto flex flex-auto lg:flex-row flex-col max-w-7xl justify-center">
+  <div class="flex flex-col gap-2 max-w-full lg:max-w-4xl w-full">
+    <repository-branch-selector></repository-branch-selector>
+    <repository-commit [commit]="lastCommit"></repository-commit>
+    <repository-tree-list></repository-tree-list>
+  </div>
+
+  <repository-tree-information></repository-tree-information>
+</div>
+
+<!-- Кнопки для шапки -->
+<ng-template #header>
+  <div class="flex flex-row items-end justify-end gap-1.5">
+    <button mat-raised-button [matTooltip]="'Просмотреть историю коммитов'" class="rounded"
+            [routerLink]="getRouterLink()">
+      <span>История</span>
+    </button>
+
+    <div class="relative group">
+      <button mat-raised-button class="rounded" color="primary">
+        <mat-icon [svgIcon]="'heroicons_outline:chevron-down'"></mat-icon>
+        <span class="pl-2">Код</span>
+      </button>
+      <div
+        class="absolute invisible right-0 w-96 opacity-0 group-hover:opacity-100
+        group-hover:visible transition-opacity duration-300 z-10">
+        <div class="bg-card border rounded-lg shadow-lg mt-2 p-3">
+          <div class="flex flex-auto flex-col">
+            <mat-form-field class="flex-auto">
+              <mat-label class="text-xs">Клонировать с помощью TortoiseSVN:</mat-label>
+              <input matInput readonly [value]="repositoryInformation.svnUrl" />
+              <button mat-icon-button [cdkCopyToClipboard]="repositoryInformation.svnUrl">
+                <mat-icon [svgIcon]="'heroicons_outline:clipboard-document'" class="icon-size-5"></mat-icon>
+              </button>
+            </mat-form-field>
+            <div class="flex flex-col">
+              <button mat-button [disabled]="true" class="block w-full text-left p-2 hover:bg-hover rounded"
+                      [matTooltip]="'Недоступно в данной версии'">
+                Скачать zip
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-template>

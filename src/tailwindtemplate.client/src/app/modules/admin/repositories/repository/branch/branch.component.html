@@ -1,0 +1,13 @@
+<div class="flex flex-row items-start justify-end w-full">
+  <!-- Переключание ветки -->
+  <mat-form-field appearance="outline" class="small" [matTooltip]="selectedBranch?.title">
+    <mat-select [(value)]="selectedBranch" (selectionChange)="selectBranch($event)">
+      @for (branch of branches; track branch.title) {
+        <mat-option [value]="branch" [routerLink]="getBranchLink(branch)">
+          {{ branch.title }}
+        </mat-option>
+      }
+    </mat-select>
+    <mat-icon matPrefix [svgIcon]="'feather:git-branch'"></mat-icon>
+  </mat-form-field>
+</div>

@@ -1,0 +1,18 @@
+@switch (config.scheme) {
+  @case ("dark") {
+    <button mat-icon-button (click)="setScheme('light')" [matTooltip]="'Включить светлую тему'">
+      <mat-icon svgIcon="heroicons_outline:sun"></mat-icon>
+    </button>
+  }
+  @case ("light") {
+    <button mat-icon-button (click)="setScheme('auto')" [matTooltip]="'Включить автоматический выбор темы'">
+      <mat-icon svgIcon="heroicons_outline:bolt"></mat-icon>
+    </button>
+  }
+  @case ("auto") {
+    <button mat-icon-button (click)="setScheme('dark')" [matTooltip]="'Включить темную тему'">
+      <mat-icon svgIcon="heroicons_outline:moon"></mat-icon>
+    </button>
+  }
+}
+

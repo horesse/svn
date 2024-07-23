@@ -1,0 +1,10 @@
+<cdk-virtual-scroll-viewport itemSize="66" (scrolledIndexChange)="onScroll()" class="min-w-full"
+                             [style.height.px]="document.getElementById('main').offsetHeight">
+  <div *cdkVirtualFor="let commit of commits" class="w-full h-full border-b">
+    <repository-commit [commit]="commit"></repository-commit>
+  </div>
+</cdk-virtual-scroll-viewport>
+
+<ng-template #header>
+
+</ng-template>

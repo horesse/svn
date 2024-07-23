@@ -1,0 +1,58 @@
+<div class="absolute inset-0 flex min-w-0 flex-col overflow-hidden max-h-full max-w-full h-full">
+
+  <div class="flex flex-auto flex-col max-h-full max-w-full h-full">
+
+    <div
+      class="bg-card flex flex-row items-center justify-between border-b p-2 dark:bg-transparent sm:py-4 md:px-8">
+
+      <div class="flex flex-row items-center w-full ">
+        <!-- Хлебные крошки -->
+        <div class="pl-2 flex flex-wrap items-center font-medium">
+          <a [routerLink]="['./tree/trunk']" class="flex items-center ml-1 whitespace-nowrap text-primary-500">
+            {{ repositoryName }}
+            @if (this.breadcrumbs && this.breadcrumbs.length > 1) {
+              <mat-icon
+                class="icon-size-5 text-secondary"
+                [svgIcon]="'heroicons_mini:chevron-right'"></mat-icon>
+            }
+          </a>
+
+          @if (breadcrumbs && breadcrumbs.length > 1) {
+            @for (breadcrumb of breadcrumbs; track breadcrumb.title) {
+              <a class="whitespace-nowrap" [routerLink]="breadcrumb.link"
+                 [routerLinkActive]="'!text-secondary cursor-default'"
+                 [routerLinkActiveOptions]="isActiveMatchOptions"
+                 [class.text-primary-500]="!breadcrumb.current"
+              >{{ breadcrumb.title }}</a>
+              <div class="flex items-center ml-1 whitespace-nowrap">
+                @if (isLastBreadcrumb(breadcrumb)) {
+                  <mat-icon
+                    class="icon-size-5 text-secondary"
+                    [svgIcon]="'heroicons_mini:chevron-right'"></mat-icon>
+                }
+              </div>
+            }
+          }
+        </div>
+      </div>
+
+      @if (header) {
+        <!-- Кнопки действия-->
+        <ng-container *ngTemplateOutlet="header"></ng-container>
+      }
+    </div>
+
+    <!-- Основной контент -->
+    <div class="flex flex-auto max-h-full overflow-hidden h-full max-w-full pt-2">
+
+      <div class="overflow-y-auto h-full w-full" id="main">
+        <!-- Основной контент -->
+        <router-outlet></router-outlet>
+      </div>
+
+    </div>
+
+
+  </div>
+
+</div>

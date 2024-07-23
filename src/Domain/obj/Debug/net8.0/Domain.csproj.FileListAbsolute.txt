@@ -1,0 +1,14 @@
+D:\vs2022_projects\TailwindTemplate\src\Domain\bin\Debug\net8.0\Domain.deps.json
+D:\vs2022_projects\TailwindTemplate\src\Domain\bin\Debug\net8.0\Domain.dll
+D:\vs2022_projects\TailwindTemplate\src\Domain\bin\Debug\net8.0\Domain.pdb
+D:\vs2022_projects\TailwindTemplate\src\Domain\obj\Debug\net8.0\Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\vs2022_projects\TailwindTemplate\src\Domain\obj\Debug\net8.0\Domain.AssemblyInfoInputs.cache
+D:\vs2022_projects\TailwindTemplate\src\Domain\obj\Debug\net8.0\Domain.AssemblyInfo.cs
+D:\vs2022_projects\TailwindTemplate\src\Domain\obj\Debug\net8.0\Domain.csproj.CoreCompileInputs.cache
+D:\vs2022_projects\TailwindTemplate\src\Domain\obj\Debug\net8.0\Domain.dll
+D:\vs2022_projects\TailwindTemplate\src\Domain\obj\Debug\net8.0\refint\Domain.dll
+D:\vs2022_projects\TailwindTemplate\src\Domain\obj\Debug\net8.0\Domain.pdb
+D:\vs2022_projects\TailwindTemplate\src\Domain\obj\Debug\net8.0\ref\Domain.dll
+D:\vs2022_projects\TailwindTemplate\src\Domain\bin\Debug\net8.0\SharpSvn.dll
+D:\vs2022_projects\TailwindTemplate\src\Domain\obj\Debug\net8.0\Domain.csproj.AssemblyReference.cache
+D:\vs2022_projects\TailwindTemplate\src\Domain\obj\Debug\net8.0\Domain.csproj.Up2Date

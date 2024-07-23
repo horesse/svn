@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="SharpSvn">
+      <HintPath>..\TailwindTemplate.Server\bin\Debug\net8.0\runtimes\win-x64\lib\netcoreapp\SharpSvn.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

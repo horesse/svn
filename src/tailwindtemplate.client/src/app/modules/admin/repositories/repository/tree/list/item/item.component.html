@@ -1,0 +1,21 @@
+<div class="grid grid-cols-3 w-full border-b border-gray-200 dark:border-gray-700 hover:bg-hover">
+  <a class="flex items-center p-3" [routerLink]="getRouterLink(item)" (click)="item.isLoading = true">
+    @if (item.isLoading) {
+      <mat-spinner class="icon-size-5"></mat-spinner>
+    } @else if (item.type === 1; ) {
+      <mat-icon [svgIcon]="'heroicons_outline:folder'" class="icon-size-4"></mat-icon>
+    } @else {
+      <mat-icon [svgIcon]="getCurrentIcon(item.name).icon" [style.color]="getCurrentIcon(item.name).color"
+                class="icon-size-4"></mat-icon>
+    }
+    <span class="pl-2">{{ item.name }}</span>
+  </a>
+  <div class="text-gray-600 dark:text-gray-400 truncate p-3" [matTooltip]="item.lastCommit.message">
+    <a [routerLink]="routeToDiff()"> {{ item.lastCommit.message }}</a>
+  </div>
+  <div class="flex flex-row justify-end text-gray-600 dark:text-gray-400 p-3">
+    <div class="max-w-fit" [matTooltip]="item.lastCommit.date | date: 'HH:mm dd.MM.yyyy'">
+      {{ getFormattedDate(item.lastCommit.date) }}
+    </div>
+  </div>
+</div>

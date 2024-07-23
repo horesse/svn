@@ -1,0 +1,2 @@
+D:\vs2022_projects\TailwindTemplate\tailwindtemplate.client\obj\Debug\tailwindtemplate.client.esproj.CoreCompileInputs.cache
+D:\vs2022_projects\TailwindTemplate\src\tailwindtemplate.client\obj\Debug\tailwindtemplate.client.esproj.CoreCompileInputs.cache

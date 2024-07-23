@@ -1,0 +1,57 @@
+<div class="flex flex-col w-full h-full">
+  <div class="flex-auto w-full">
+    <repository-commit [commit]="commit"></repository-commit>
+  </div>
+
+  <div class="flex flex-col p-5 w-full overflow-y-scroll">
+    <mat-accordion multi="false">
+      @for (change of changes; track change.file) {
+        <mat-expansion-panel [disabled]="change.type === 1" (opened)="changeVisibilityEditor(change,true)"
+                             (closed)="changeVisibilityEditor(change,false)">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              <div class="flex flex-row items-center">
+                <mat-icon class="icon-size-4"
+                          [svgIcon]="change.type === 1 ? 'heroicons_outline:folder' : 'heroicons_outline:document'"></mat-icon>
+                <span class="pl-1" [class.text-secondary]="change.type === 1">{{ change.file }}</span>
+              </div>
+              <div class="flex flex-auto justify-end">
+                @switch (change.action) {
+                  @case ('Delete') {
+                    <mat-icon [svgIcon]="'heroicons_outline:trash'"></mat-icon>
+                  }
+                  @case ('Add') {
+                    <mat-icon [svgIcon]="'heroicons_outline:plus-circle'"></mat-icon>
+                  }
+                  @case ('Modify') {
+                    <mat-icon [svgIcon]="'heroicons_outline:pencil-square'"></mat-icon>
+                  }
+                  @case ('Replace') {
+                    <mat-icon [svgIcon]="'heroicons_outline:pencil-square'"></mat-icon>
+                  }
+                }
+              </div>
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+
+          <div class="flex flex-auto">
+            <ng-template matExpansionPanelContent>
+              @if (showEditor && change.isShowEditor) {
+                <ngx-monaco-diff-editor [options]="editorOptions" [originalModel]="oldModel"
+                                        [modifiedModel]="newModel"
+                                        style="height: 500px; width: 100%"></ngx-monaco-diff-editor>
+              }
+            </ng-template>
+
+          </div>
+        </mat-expansion-panel>
+      }
+    </mat-accordion>
+  </div>
+</div>
+
+<ng-template #header>
+  @if (oldPath) {
+    <button mat-flat-button class="rounded" [routerLink]="['../../', 'tree', oldPath]">Вернуться</button>
+  }
+</ng-template>

@@ -1,0 +1,47 @@
+<div class="flex flex-col lg:w-auto py-4 lg:py-0">
+  <div class="px-6">
+    <!-- Информация о репозитории -->
+    <div class="flex flex-col">
+      <span class="text-xl font-semibold pb-3">Информация</span>
+
+      <div class="flex flex-row items-center">
+        <mat-icon class="icon-size-4" [svgIcon]="'feather:git-commit'"></mat-icon>
+        <span class="font-bold pl-2"
+              [matTooltip]="'Кол-во коммитов в ветке (включая все, что было до создания ветки)'">{{ repositoryInformation.commitsCount }}</span>
+        <span class="pl-1">коммитов</span>
+      </div>
+      <div class="flex flex-row items-center">
+        <mat-icon class="icon-size-4" [svgIcon]="'feather:git-branch'"></mat-icon>
+        <span class="font-bold pl-2">{{ branches.length }}</span>
+        <span class="pl-1">веток</span>
+      </div>
+      <div class="flex flex-row items-center">
+        <mat-icon class="icon-size-4" [svgIcon]="'feather:tag'"></mat-icon>
+        <span class="font-bold pl-2">{{ tags.length }}</span>
+        <span class="pl-1">тегов</span>
+      </div>
+    </div>
+
+    <!-- Авторы -->
+    <div class="flex flex-col pt-5">
+      <span class="text-xl font-semibold pb-3">Авторы</span>
+
+      <div class="grid grid-cols-12 lg:grid-cols-8">
+        @for (author of repositoryInformation.authors; track author) {
+          <div
+            [matTooltip]="author"
+            class="m-1 h-7 w-7 flex items-center justify-center rounded-full bg-gray-200 text-lg uppercase text-gray-600 dark:bg-gray-700 dark:text-gray-200">
+            {{ author.charAt(0) }}
+          </div>
+        }
+      </div>
+
+    </div>
+
+    <!-- Создан -->
+    <div class="flex flex-col pt-5">
+      <span class="text-xl font-medium">Создан</span>
+      <span>{{ repositoryInformation.dateCreate | date: 'dd.MM.yyyy hh:mm' }}</span>
+    </div>
+  </div>
+</div>

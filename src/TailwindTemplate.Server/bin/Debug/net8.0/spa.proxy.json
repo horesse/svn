@@ -1,0 +1,10 @@
+{
+"SpaProxyServer": {
+"ServerUrl": "https://localhost:4200",
+"RedirectUrl": "",
+"LaunchCommand": "npm start",
+"WorkingDirectory": "D:\\vs2022_projects\\TailwindTemplate\\src\\TailwindTemplate.Server\\..\\tailwindtemplate.client",
+"MaxTimeoutInSeconds": "120",
+"KeepRunning": "false"
+}
+}

@@ -1,0 +1,17 @@
+<!-- Файлы проекта -->
+<div
+  class="flex flex-col w-full bg-white dark:bg-gray-800 border">
+
+  <div class="max-h-full w-full">
+    <!-- Кнопка "вернуться" -->
+    @if (isShowButtonBack()) {
+      <div class="w-full border-b grid hover:bg-hover">
+        <a class="p-3" [routerLink]="['../']" [matTooltip]="'Вернуться'">..</a>
+      </div>
+    }
+
+    @for (item of items; track item.name) {
+      <repository-tree-item [item]="item"></repository-tree-item>
+    }
+  </div>
+</div>

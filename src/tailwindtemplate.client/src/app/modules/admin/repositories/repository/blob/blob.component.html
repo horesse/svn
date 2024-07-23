@@ -1,0 +1,37 @@
+<div class="flex flex-col w-full h-full">
+  <repository-commit [commit]="lastCommit"></repository-commit>
+
+  @if (showEditor) {
+    <div class="flex flex-col w-full h-full">
+      @if (!file.isBinary) {
+        <ngx-monaco-editor [options]="editorOptions"
+                           [(ngModel)]="file.content"
+                           [style.height.px]="document.getElementById('main').offsetHeight"></ngx-monaco-editor>
+      } @else {
+        <div class="flex flex-col p-5 border items-center">
+          <mat-icon [svgIcon]="'heroicons_outline:exclamation-triangle'"
+                    class="icon-size-24 text-amber-500"></mat-icon>
+          <span class="text-xl">Файл недоступен для просмотра, но Вы можете его скачать</span>
+        </div>
+      }
+    </div>
+  }
+</div>
+
+
+<ng-template #header>
+  <div class="flex flex-row items-end justify-end gap-1.5">
+    @if (!file.isBinary) {
+      <button mat-raised-button [matTooltip]="'Копировать'" [cdkCopyToClipboard]="file.content" class="rounded">
+        <span>Копировать</span>
+      </button>
+    }
+    <button mat-raised-button [matTooltip]="'Скачать файл'" class="rounded">
+      <span>Скачать</span>
+    </button>
+    <button mat-raised-button [matTooltip]="'Просмотреть историю коммитов'" class="rounded"
+            [routerLink]="getRouterLink()">
+      <span>История</span>
+    </button>
+  </div>
+</ng-template>

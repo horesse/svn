@@ -1,0 +1,23 @@
+<div class="flex flex-col items-center justify-center w-full h-full">
+  <div class="w-full max-w-3xl">
+    <div class="max-w-none mx-auto prose prose-sm">
+      <logo></logo>
+      <h1>Посадочный модуль</h1>
+      <p>
+        Пример главной странички. Здесь вы можете разместить контент любого рода.
+      </p>
+    </div>
+    <div>
+      <a
+        class="mt-8"
+        mat-flat-button
+        [color]="'primary'"
+        [routerLink]="'/ui/page-layouts/overview'">
+        <span>Запустить приложение</span>
+        <mat-icon
+          class="ml-2 icon-size-5"
+          [svgIcon]="'heroicons_mini:arrow-long-right'"></mat-icon>
+      </a>
+    </div>
+  </div>
+</div>
