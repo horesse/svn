@@ -1,0 +1,8 @@
+﻿<Project>
+  <PropertyGroup>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <!--<ArtifactsPath>$(MSBuildThisFileDirectory)artifacts</ArtifactsPath>-->
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+</Project>

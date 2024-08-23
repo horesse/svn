@@ -1,0 +1,1 @@
+export * from '@horesse/pipes/base64-to-image/base64-to-image.pipe';

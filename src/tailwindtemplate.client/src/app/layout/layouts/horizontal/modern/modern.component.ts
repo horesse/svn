@@ -1,17 +1,18 @@
 import { NgIf } from '@angular/common';
 import { Component, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 import { ActivatedRoute, Router, RouterOutlet } from '@angular/router';
 import { LoadingBarComponent } from '@horesse/components/loading-bar';
 import { HorizontalNavigationComponent, NavigationService as MenuNavigationService, VerticalNavigationComponent } from '@horesse/components/navigation';
 import { MediaWatcherService } from '@horesse/services/media-watcher';
 import { NavigationService } from 'app/core/navigation/navigation.service';
 import { Navigation } from 'app/core/navigation/navigation.types';
-import { Subject, takeUntil } from 'rxjs';
-import { LogoComponent } from 'app/layout/common/logo/logo.component';
-import { MatIconModule } from '@angular/material/icon';
-import { MatButtonModule } from '@angular/material/button';
-import { SchemeComponent } from 'app/layout/common/scheme/scheme.component';
 import { LayoutSwitcherComponent } from 'app/layout/common/layout/layout.component';
+import { LogoComponent } from 'app/layout/common/logo/logo.component';
+import { SchemeComponent } from 'app/layout/common/scheme/scheme.component';
+import { UserComponent } from 'app/layout/common/user/user.component';
+import { Subject, takeUntil } from 'rxjs';
 
 @Component({
   selector     : 'modern-layout',
@@ -28,7 +29,8 @@ import { LayoutSwitcherComponent } from 'app/layout/common/layout/layout.compone
     MatIconModule,
     MatButtonModule,
     SchemeComponent,
-    LayoutSwitcherComponent
+    LayoutSwitcherComponent,
+    UserComponent
   ]
 })
 export class ModernLayoutComponent implements OnInit, OnDestroy {

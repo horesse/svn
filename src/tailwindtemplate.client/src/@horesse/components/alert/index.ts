@@ -1,0 +1,1 @@
+export * from '@horesse/components/alert/public-api';

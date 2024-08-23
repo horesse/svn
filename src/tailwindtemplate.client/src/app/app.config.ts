@@ -3,6 +3,7 @@ import { ApplicationConfig, importProvidersFrom } from '@angular/core';
 import { provideAnimations } from '@angular/platform-browser/animations';
 import { PreloadAllModules, provideRouter, withComponentInputBinding, withHashLocation, withInMemoryScrolling, withPreloading } from '@angular/router';
 import { provideHoresse } from '@horesse';
+import { provideAuth } from 'app/core/auth/auth.provider';
 import { MonacoEditorModule } from 'ngx-monaco-editor-v2';
 import { appRoutes } from './app.routes';
 import { provideIcons } from './core/icons/icons.provider';
@@ -22,6 +23,7 @@ export const appConfig: ApplicationConfig = {
     // Material providers
 
     // Horesse Providers
+    provideAuth(),
     provideIcons(),
     provideHoresse({
       app: {

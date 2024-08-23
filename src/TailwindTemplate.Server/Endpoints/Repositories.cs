@@ -5,6 +5,7 @@ using Application.Features.Repo.Queries.GetRepoInfo;
 using Application.Features.Repo.Queries.GetTags;
 using Application.Features.Repositories.GetRepositories;
 using Domain.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace TailwindTemplate.Server.Endpoints;
 
@@ -13,6 +14,7 @@ public class Repositories : EndpointGroupBase
     public override void Map(WebApplication app)
     {
         app.MapGroup(this)
+            .RequireAuthorization()
             .MapGet(GetRepositories)
             .MapGet(GetBranches, "branches/{repoName}")
             .MapGet(GetTags, "tags/{repoName}")

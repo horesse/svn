@@ -37,6 +37,8 @@ app.MapControllerRoute(
     name: "default",
     pattern: "{controller}/{action=Index}/{id?}");
 
+app.UseExceptionHandler(options => { });
+
 app.MapEndpoints();
 
 app.Run();

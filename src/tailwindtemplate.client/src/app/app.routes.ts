@@ -1,11 +1,19 @@
 import { Route } from '@angular/router';
-import { initialDataResolver } from 'app/app.resolvers';
+import { baseDataResolver, initialDataResolver } from 'app/app.resolvers';
+import { AuthGuard } from 'app/core/auth/guards/auth.guard';
+import { NoAuthGuard } from 'app/core/auth/guards/noAuth.guard';
 import { LayoutComponent } from 'app/layout/layout.component';
 
 export const appRoutes: Route[] = [
 
   // Авторедирект на главную страницу
   { path: '', pathMatch: 'full', redirectTo: 'home' },
+
+  {
+    path      : 'signed-in-redirect',
+    pathMatch : 'full',
+    redirectTo: '/'
+  },
 
   // Посадочные страницы
   {
@@ -19,14 +27,56 @@ export const appRoutes: Route[] = [
     ]
   },
 
+  // Роутсы авторизации для гостей
+  {
+    path            : '',
+    canActivate     : [NoAuthGuard],
+    canActivateChild: [NoAuthGuard],
+    component       : LayoutComponent,
+    resolve         : {
+      baseData: baseDataResolver
+    },
+    data            : {
+      layout: 'empty'
+    },
+    children        : [
+      {
+        path        : 'sign-in',
+        loadChildren: () =>
+          import('app/modules/auth/sign-in/sign-in.routes')
+      }
+    ]
+  },
+
+  // Auth routes for authenticated users
+  {
+    path            : '',
+    canActivate     : [AuthGuard],
+    canActivateChild: [AuthGuard],
+    component       : LayoutComponent,
+    data            : {
+      layout: 'empty'
+    },
+    children        : [
+      {
+        path        : 'sign-out',
+        loadChildren: () =>
+          import('app/modules/auth/sign-out/sign-out.routes')
+      }
+    ]
+  },
+
   // Основной контент
   {
-    path     : '',
-    component: LayoutComponent,
-    resolve  : {
-      initialData: initialDataResolver
+    path            : '',
+    component       : LayoutComponent,
+    canActivate     : [AuthGuard],
+    canActivateChild: [AuthGuard],
+    resolve         : {
+      initialData: initialDataResolver,
+      baseData   : baseDataResolver
     },
-    children : [
+    children        : [
       {
         path: 'ui', children: [
           {
