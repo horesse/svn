@@ -13,4 +13,5 @@ export interface User {
   roles: string[];
   rolesToView: string[];
   avatar: string;
+  phone: string;
 }

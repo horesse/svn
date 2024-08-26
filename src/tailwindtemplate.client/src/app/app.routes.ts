@@ -7,7 +7,7 @@ import { LayoutComponent } from 'app/layout/layout.component';
 export const appRoutes: Route[] = [
 
   // Авторедирект на главную страницу
-  { path: '', pathMatch: 'full', redirectTo: 'home' },
+  { path: '', pathMatch: 'full', redirectTo: 'ui/page-layouts/overview' },
 
   {
     path      : 'signed-in-redirect',
@@ -48,7 +48,7 @@ export const appRoutes: Route[] = [
     ]
   },
 
-  // Auth routes for authenticated users
+  // Роутсы для авторизованных юзеров
   {
     path            : '',
     canActivate     : [AuthGuard],
@@ -86,6 +86,9 @@ export const appRoutes: Route[] = [
       },
       {
         path: 'repositories', loadChildren: () => import('app/modules/admin/repositories/repositories.routes')
+      },
+      {
+        path: 'profile', loadChildren: () => import('app/modules/admin/personal/profile/profile.routes')
       }
     ]
   },

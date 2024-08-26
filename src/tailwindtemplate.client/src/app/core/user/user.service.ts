@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { AuthUtils } from 'app/core/auth/auth.utils';
 import { User } from 'app/core/user/user.types';
@@ -6,6 +7,9 @@ import { Observable, ReplaySubject } from 'rxjs';
 @Injectable({ providedIn: 'root' })
 export class UserService {
   private _user: ReplaySubject<User> = new ReplaySubject<User>(1);
+
+  constructor(private _httpClient: HttpClient) {
+  }
 
   // -----------------------------------------------------------------------------------------------------
   // @ Accessors
@@ -28,16 +32,21 @@ export class UserService {
       personalNumber       : decodedAccessToken.PersonalNumber,
       department           : decodedAccessToken.Department,
       position             : decodedAccessToken.Position,
-      fullName             : decodedAccessToken.FullName,
-      roles                : decodedAccessToken.Roles,
-      rolesToView          : decodedAccessToken.RolesToView,
+      fullName             : decodedAccessToken.Fullname,
+      roles                : decodedAccessToken.Roles?.split(';'),
+      rolesToView          : decodedAccessToken.RolesToView?.split(';'),
       workplaceName        : decodedAccessToken.WorkplaceName,
       bureau               : decodedAccessToken.Bureau,
       structureEnterpriseId: decodedAccessToken.StructureEnterpriseId,
       email                : decodedAccessToken.Email,
-      avatar               : decodedAccessToken.Avatar
+      avatar               : decodedAccessToken.Avatar,
+      phone                : decodedAccessToken.Phone
     };
     return user;
+  }
+
+  getUserAvatar(): Observable<any> {
+    return this._httpClient.get('api/identity/avatar', { responseType: 'text' });
   }
 
   // -----------------------------------------------------------------------------------------------------

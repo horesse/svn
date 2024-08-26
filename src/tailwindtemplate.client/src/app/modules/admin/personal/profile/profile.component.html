@@ -1,0 +1,103 @@
+<div class="mx-auto w-full max-w-5xl">
+  <div class="relative w-full">
+    <div class="flex w-full flex-col items-center pt-3">
+      <div class="relative flex h-18 w-18 flex-0 items-center justify-center">
+        @if (true) {
+          <img class="h-full w-full rounded-full object-cover object-top ring-bg-card ring-4"
+               [src]="avatar | Base64ToImage">
+        } @else {
+          <div
+            class="flex h-full w-full items-center justify-center rounded-full ring-bg-card ring-4 bg-gray-200 text-lg uppercase text-gray-600 dark:bg-gray-700 dark:text-gray-200 ng-star-inserted">
+            {{ user.fullName.toUpperCase().charAt(0) }}
+          </div>
+        }
+      </div>
+
+      <div class="flex flex-col mx-auto w-full max-w-md text-center gap-y-2 pt-3">
+
+        <!-- ФИО -->
+        <span class="text-lg font-bold leading-none" [matTooltip]="'ФИО'">
+          {{ user.fullName }}
+        </span>
+
+        <!-- Логин -->
+        <span class="text-secondary" [matTooltip]="'Логин'">
+          &#64;{{ user.userName }}
+        </span>
+
+        <div
+          class="flex items-center justify-center divide-x text-secondary">
+          <div class="flex flex-row justify-center items-center gap-1 px-4" [matTooltip]="'Табельный номер'">
+            <mat-icon class="icon-size-4" [svgIcon]="'heroicons_outline:hashtag'"></mat-icon>
+            <p class="pl-0.5">{{ user.personalNumber }}</p>
+          </div>
+
+          <div class="flex flex-row justify-center items-center gap-1 px-4" [matTooltip]="'Должность'">
+            <mat-icon class="icon-size-4" [svgIcon]="'heroicons_outline:user'"></mat-icon>
+            <p class="pl-0.5">{{ user.position }}</p>
+          </div>
+
+          <div class="flex flex-row justify-center items-center gap-1 px-4" [matTooltip]="'Подразделение и бюро'">
+            <mat-icon class="icon-size-4" [svgIcon]="'heroicons_outline:building-office'"></mat-icon>
+            <p class="pl-0.5">{{ user.department }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-6 grid grid-cols-12 gap-6">
+      <div class="col-span-12 sm:col-span-8">
+        <div class="flex flex-col gap-6">
+          <div class="bg-card rounded border p-5">
+            <div class="">
+              <div class="flex items-center gap-2">
+                <div class="mb-4 flex items-center gap-2 text-lg">
+                <span
+                  class="text-secondary font-sans text-sm font-semibold uppercase"> Права
+                </span>
+                </div>
+              </div>
+
+              <div class="grid gap-4 sm:grid-cols-2">
+                @for (role of user.rolesToView; track role) {
+                  <div class="flex w-full items-center gap-2">
+                    <div
+                      class="border rounded-full bg-gray-200 dark:bg-gray-700 h-10 w-10 flex items-center justify-center">
+                      <mat-icon [svgIcon]="getRoleIcon(role)"></mat-icon>
+                    </div>
+                    <div>{{ role }}</div>
+                  </div>
+                }
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-span-12 sm:col-span-4">
+        <div class="bg-card rounded p-5 border">
+          <div class="pb-8">
+            <div class="mb-4 flex items-center gap-2 text-lg">
+              <span
+                class="text-secondary font-sans text-sm font-semibold uppercase"> Контактная информация
+              </span>
+            </div>
+
+            <div class="flex flex-col gap-y-2">
+              @if (user.phone) {
+                <div class="flex flex-row flex-auto w-fit" [matTooltip]="'Номер телефона'">
+                  <mat-icon class="icon-size-4" [svgIcon]="'heroicons_outline:phone'"></mat-icon>
+                  <span class="pl-1">{{ user.phone }}</span>
+                </div>
+              }
+              <div class="flex flex-row flex-auto w-fit items-center" [matTooltip]="'Почта'">
+                <mat-icon class="icon-size-4" [svgIcon]="'heroicons_outline:envelope'"></mat-icon>
+                <span class="pl-1">{{ user.email }}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

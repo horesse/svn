@@ -25,14 +25,15 @@ public class JwtService(IConfiguration configuration) : IJwtService
             new("StructureEnterpriseId", user.StructureEnterpriseId.ToString(CultureInfo.InvariantCulture)),
             new("Email", user.Email),
             new("RolesToView", string.Join(";", user.RolesToView)),
-            new("Avatar", user.Avatar ?? string.Empty)
+            new("Avatar", user.Avatar ?? string.Empty),
+            new("Phone", user.Phone)
         };
         var jwtToken = new JwtSecurityToken(
             issuer: configuration["ApplicationSettings:AuthSettings:Issuer"],
             audience: configuration["ApplicationSettings:AuthSettings:Audience"],
             claims: claims,
             notBefore: DateTime.UtcNow,
-            expires: DateTime.UtcNow.AddDays(1),
+            expires: DateTime.UtcNow.Date.AddDays(1),
             signingCredentials: new SigningCredentials(
                 new SymmetricSecurityKey(
                     Encoding.UTF8.GetBytes(configuration["ApplicationSettings:AuthSettings:SecretJwt"]!)

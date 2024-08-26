@@ -19,7 +19,6 @@ public class CustomExceptionHandler : IExceptionHandler
         if (!_exceptionHandlers.TryGetValue(exceptionType, out var handler)) return false;
         await handler.Invoke(httpContext, exception);
         return true;
-
     }
     
     private static async Task HandleUnauthorizedAccessException(HttpContext httpContext, Exception ex)

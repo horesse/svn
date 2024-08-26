@@ -17,6 +17,7 @@ public static class DependencyInjection
         services.AddScoped<IPublishService, PublishService>();
         services.AddScoped<IJwtService, JwtService>();
         services.AddScoped<IAuthService, AuthService>();
+        services.AddScoped<IPortalService, PortalService>();
 
         services.AddAuthentication(cfg =>
         {

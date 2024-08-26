@@ -12,6 +12,8 @@ public static class DependencyInjection
         services.AddRazorPages();
         
         services.AddScoped<IUser, CurrentUser>();
+        services.AddHttpContextAccessor();
+        
         services.AddExceptionHandler<CustomExceptionHandler>();
 
         services.Configure<ApiBehaviorOptions>(options =>

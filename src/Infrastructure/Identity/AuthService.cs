@@ -52,13 +52,13 @@ public class AuthService(IConfiguration configuration) : IAuthService
             Email = obj["user"]!["Email"]!.ToString(),
             PersonalNumber = obj["user"]!["PersonalNumber"]!.ToString(),
             Department = obj["user"]!["Department"]!.ToString(),
-            Bureau = obj["user"]!["PersonalNumber"]?.ToString(),
-            Position = obj["user"]!["PersonalNumber"]!.ToString(),
+            Bureau = obj["user"]!["Bureau"]?.ToString(),
+            Position = obj["user"]!["Position"]!.ToString(),
             WorkplaceName = obj["user"]!["PersonalNumber"]?.ToString(),
             StructureEnterpriseId = decimal.Parse(obj["user"]!["StructureEnterpriseId"]!.ToString()),
             Roles = obj["user"]!["Roles"]!.ToString().Split(';').ToList(),
             RolesToView = obj["user"]!["AppRoles"]!.ToString().Split(';').ToList(),
-            //Avatar = obj["user"]!["Photo"]?.ToString()
+            Phone = obj["user"]!["Phone"]!.ToString()
         };
     }
 }

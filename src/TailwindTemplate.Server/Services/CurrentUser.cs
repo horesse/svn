@@ -6,6 +6,7 @@ namespace TailwindTemplate.Server.Services;
 public class CurrentUser(IHttpContextAccessor httpContextAccessor) : IUser
 {
     public decimal? Id => GetId();
+    public string? PersonalNumber => httpContextAccessor.HttpContext?.User?.FindFirst(ClaimConstants.PersonalNumber)?.Value;
 
     private decimal? GetId()
     {
