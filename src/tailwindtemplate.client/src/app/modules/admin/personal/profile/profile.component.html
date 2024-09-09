@@ -3,11 +3,11 @@
     <div class="flex w-full flex-col items-center pt-3">
       <div class="relative flex h-18 w-18 flex-0 items-center justify-center">
         @if (true) {
-          <img class="h-full w-full rounded-full object-cover object-top ring-bg-card ring-4"
+          <img class="h-full w-full rounded-full object-cover object-top ring-4"
                [src]="avatar | Base64ToImage">
         } @else {
           <div
-            class="flex h-full w-full items-center justify-center rounded-full ring-bg-card ring-4 bg-gray-200 text-lg uppercase text-gray-600 dark:bg-gray-700 dark:text-gray-200 ng-star-inserted">
+            class="flex h-full w-full items-center justify-center rounded-full ring-4 bg-gray-200 text-lg uppercase text-gray-600 dark:bg-gray-700 dark:text-gray-200 ng-star-inserted">
             {{ user.fullName.toUpperCase().charAt(0) }}
           </div>
         }
