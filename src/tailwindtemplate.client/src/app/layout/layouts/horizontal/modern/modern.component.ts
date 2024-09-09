@@ -11,6 +11,7 @@ import { Navigation } from 'app/core/navigation/navigation.types';
 import { LayoutSwitcherComponent } from 'app/layout/common/layout/layout.component';
 import { LogoComponent } from 'app/layout/common/logo/logo.component';
 import { SchemeComponent } from 'app/layout/common/scheme/scheme.component';
+import { SettingsComponent } from 'app/layout/common/settings/settings.component';
 import { UserComponent } from 'app/layout/common/user/user.component';
 import { Subject, takeUntil } from 'rxjs';
 
@@ -30,7 +31,8 @@ import { Subject, takeUntil } from 'rxjs';
     MatButtonModule,
     SchemeComponent,
     LayoutSwitcherComponent,
-    UserComponent
+    UserComponent,
+    SettingsComponent
   ]
 })
 export class ModernLayoutComponent implements OnInit, OnDestroy {

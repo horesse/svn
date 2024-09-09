@@ -6,11 +6,11 @@
           [src]="user.avatar | Base64ToImage"
           class="h-7 w-7 rounded-full"
         />
-        <mat-icon
-          *ngIf="!showAvatar || !user.avatar"
-          [svgIcon]="'heroicons_outline:user-circle'"
-        ></mat-icon>
     </span>
+  <mat-icon
+    *ngIf="!showAvatar || !user.avatar"
+    [svgIcon]="'heroicons_outline:user-circle'"
+  ></mat-icon>
 </button>
 
 <mat-menu #userActions="matMenu" [xPosition]="'before'">

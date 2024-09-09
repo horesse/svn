@@ -14,8 +14,8 @@ const themes = {
   // Default theme is required for theming system to work correctly!
   'default': {
     primary: {
-      ...colors.indigo,
-      DEFAULT: colors.indigo[600]
+      ...colors.sky,
+      DEFAULT: colors.sky[600]
     },
     accent: {
       ...colors.neutral,
@@ -28,11 +28,6 @@ const themes = {
     'on-warn': {
       500: colors.red['50']
     }
-  },
-  // Rest of the themes will use the 'default' as the base
-  // theme and will extend it with their given configuration.
-  'brand': {
-    primary: customPalettes.brand
   },
   'teal': {
     primary: {
@@ -51,6 +46,27 @@ const themes = {
   },
   'amber': {
     primary: colors.amber
+  },
+  'lime': {
+    primary: colors.lime
+  },
+  'indigo': {
+    primary: colors.indigo
+  },
+  'emerald': {
+    primary: colors.emerald
+  },
+  'pink': {
+    primary: colors.pink
+  },
+  'orange': {
+    primary: colors.orange
+  },
+  'violet': {
+    primary: colors.violet
+  },
+  'yellow': {
+    primary: colors.yellow
   }
 };
 

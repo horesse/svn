@@ -1,0 +1,38 @@
+<button mat-icon-button (click)="openSettings()">
+  <mat-icon [svgIcon]="'heroicons_outline:cog-6-tooth'"></mat-icon>
+</button>
+
+<ng-template #modalSettings>
+  <div class="flex w-full items-center justify-between p-2">
+    <span class="text-xl">Конфигуратор темы</span>
+    <button mat-icon-button [mat-dialog-close]="true">
+      <mat-icon [svgIcon]="'heroicons_outline:x-mark'"></mat-icon>
+    </button>
+  </div>
+  <div class="max-h-[550px] overflow-y-auto px-2 pb-4 md:px-2 md:pb-6">
+    <div class="grid grid-cols-12 gap-6">
+      <div class="col-span-12 flex flex-col gap-4">
+        <div class="flex flex-col">
+          <span>Выбор цвета</span>
+          <span class="text-secondary">Вы можете изменить цветовую палитру</span>
+        </div>
+
+        <div class="space-y-1">
+          <div class="grid grid-cols-1 gap-x-4 gap-y-1 sm:grid-cols-2">
+            @for (theme of themes; track theme) {
+              <div
+                class="group flex w-full items-center gap-3 rounded-lg p-2 transition-colors duration-200 relative z-10 cursor-pointer hover:bg-gray-200 dark:hover:bg-gray-900"
+                [ngClass]="theme.id"
+                [class.ring-1]="theme.id === currentTheme"
+                [class.ring-primary-500]="theme.id === currentTheme"
+                (click)="selectTheme(theme.id)">
+                <span class="block size-6 shrink-0 rounded-lg bg-primary"></span>
+                <span>{{ theme.name }}</span>
+              </div>
+            }
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-template>

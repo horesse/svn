@@ -42,10 +42,6 @@ export const appConfig: ApplicationConfig = {
             name: 'Default'
           },
           {
-            id  : 'theme-brand',
-            name: 'Brand'
-          },
-          {
             id  : 'theme-teal',
             name: 'Teal'
           },
@@ -60,6 +56,34 @@ export const appConfig: ApplicationConfig = {
           {
             id  : 'theme-amber',
             name: 'Amber'
+          },
+          {
+            id  : 'theme-lime',
+            name: 'Lime'
+          },
+          {
+            id  : 'theme-indigo',
+            name: 'Indigo'
+          },
+          {
+            id  : 'theme-emerald',
+            name: 'Emerald'
+          },
+          {
+            id  : 'theme-pink',
+            name: 'Pink'
+          },
+          {
+            id  : 'theme-orange',
+            name: 'Orange'
+          },
+          {
+            id  : 'theme-violet',
+            name: 'Violet'
+          },
+          {
+            id  : 'theme-yellow',
+            name: 'Yellow'
           }
         ]
       }
