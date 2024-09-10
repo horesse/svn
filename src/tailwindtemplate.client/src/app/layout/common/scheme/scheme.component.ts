@@ -1,9 +1,9 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import { MatTooltipModule } from '@angular/material/tooltip';
 import { AppConfig, ConfigService, Scheme } from '@horesse/services/config';
 import { Subject, takeUntil } from 'rxjs';
-import { MatTooltipModule } from '@angular/material/tooltip';
 
 @Component({
   selector   : 'scheme',

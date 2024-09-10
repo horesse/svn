@@ -1,9 +1,8 @@
 import { coerceBooleanProperty } from '@angular/cdk/coercion';
-import { NgIf } from '@angular/common';
 import { Component, Input, OnChanges, OnDestroy, OnInit, SimpleChanges, ViewEncapsulation } from '@angular/core';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
-import { Subject, takeUntil } from 'rxjs';
 import { LoadingService } from '@horesse/services/loading';
+import { Subject, takeUntil } from 'rxjs';
 
 @Component({
   selector     : 'loading-bar',
@@ -12,7 +11,7 @@ import { LoadingService } from '@horesse/services/loading';
   encapsulation: ViewEncapsulation.None,
   exportAs     : 'loadingBar',
   standalone   : true,
-  imports      : [NgIf, MatProgressBarModule]
+  imports      : [MatProgressBarModule]
 })
 export class LoadingBarComponent implements OnChanges, OnInit, OnDestroy {
   @Input() autoMode: boolean = true;

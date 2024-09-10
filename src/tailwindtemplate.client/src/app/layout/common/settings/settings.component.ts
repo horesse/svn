@@ -1,31 +1,37 @@
 import { NgClass } from '@angular/common';
-import { Component, OnDestroy, OnInit, TemplateRef, ViewChild } from '@angular/core';
+import { Component, OnDestroy, OnInit, TemplateRef, ViewChild, ViewEncapsulation } from '@angular/core';
 import { MatIconButton } from '@angular/material/button';
-import { MatDialog, MatDialogClose } from '@angular/material/dialog';
+import { MatDialog, MatDialogClose, MatDialogRef } from '@angular/material/dialog';
 import { MatIcon } from '@angular/material/icon';
-import { ConfigService, Theme, Themes } from '@horesse/services/config';
+import { Router } from '@angular/router';
+import { AppConfig, ConfigService, Theme } from '@horesse/services/config';
 import { Subject, takeUntil } from 'rxjs';
 
 @Component({
-  selector   : 'settings',
-  standalone : true,
-  imports    : [
+  selector     : 'settings',
+  standalone   : true,
+  imports      : [
     MatIconButton,
     MatIcon,
     NgClass,
     MatDialogClose
   ],
-  templateUrl: './settings.component.html'
+  templateUrl  : './settings.component.html',
+  encapsulation: ViewEncapsulation.None
 })
 export class SettingsComponent implements OnInit, OnDestroy {
-  themes: Themes;
-  currentTheme: Theme;
+  config: AppConfig;
 
   @ViewChild('modalSettings') modalSettings: TemplateRef<any>;
 
-  private _unsubscribeAll = new Subject<any>();
+  private _dialogRef: MatDialogRef<any>;
+  private _unsubscribeAll: Subject<any> = new Subject<any>();
 
-  constructor(private _matDialog: MatDialog, private _configService: ConfigService) {
+  constructor(
+    private _matDialog: MatDialog,
+    private _configService: ConfigService,
+    private _router: Router
+  ) {
   }
 
   // -----------------------------------------------------------------------------------------------------
@@ -36,8 +42,7 @@ export class SettingsComponent implements OnInit, OnDestroy {
     this._configService.config$
       .pipe(takeUntil(this._unsubscribeAll))
       .subscribe(config => {
-        this.themes = config.themes;
-        this.currentTheme = config.theme;
+        this.config = config;
       });
   }
 
@@ -51,10 +56,24 @@ export class SettingsComponent implements OnInit, OnDestroy {
   // -----------------------------------------------------------------------------------------------------
 
   openSettings() {
-    this._matDialog.open(this.modalSettings, { autoFocus: false });
+    this._dialogRef = this._matDialog.open(this.modalSettings, { autoFocus: false });
   }
 
   selectTheme(theme: Theme) {
     this._configService.config = { theme };
+  }
+
+  setLayout(layout: string): void {
+    this._router
+      .navigate([], {
+        queryParams        : {
+          layout: null
+        },
+        queryParamsHandling: 'merge'
+      })
+      .then(() => {
+        this._configService.config = { layout };
+        this._dialogRef.close();
+      });
   }
 }

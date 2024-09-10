@@ -6,18 +6,18 @@ import { forkJoin } from 'rxjs';
 
 export const initialDataResolver = () => {
   const navigationService = inject(NavigationService);
-  const configService = inject(ConfigService);
 
   return forkJoin([
-    navigationService.get(),
-    configService.loadConfig()
+    navigationService.get()
   ]);
 };
 
 export const baseDataResolver = () => {
   const appInfoService = inject(AppInfoService);
+  const configService = inject(ConfigService);
 
   return forkJoin([
-    appInfoService.getAppInfo()
+    appInfoService.getAppInfo(),
+    configService.loadConfig()
   ]);
 };

@@ -8,7 +8,6 @@ import { NavigationService as MenuNavigationService, VerticalNavigationComponent
 import { MediaWatcherService } from '@horesse/services/media-watcher';
 import { NavigationService } from 'app/core/navigation/navigation.service';
 import { Navigation } from 'app/core/navigation/navigation.types';
-import { LayoutSwitcherComponent } from 'app/layout/common/layout/layout.component';
 import { LogoComponent } from 'app/layout/common/logo/logo.component';
 import { SchemeComponent } from 'app/layout/common/scheme/scheme.component';
 import { SettingsComponent } from 'app/layout/common/settings/settings.component';
@@ -29,7 +28,6 @@ import { Subject, takeUntil } from 'rxjs';
     LoadingBarComponent,
     LogoComponent,
     SchemeComponent,
-    LayoutSwitcherComponent,
     UserComponent,
     SettingsComponent
   ]
