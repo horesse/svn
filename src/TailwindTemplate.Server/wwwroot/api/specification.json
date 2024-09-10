@@ -242,6 +242,26 @@
         }
       }
     },
+    "/api/Identity/avatar": {
+      "get": {
+        "tags": [
+          "Identity"
+        ],
+        "operationId": "GetUserAvatar",
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/Publish/profiles": {
       "post": {
         "tags": [
